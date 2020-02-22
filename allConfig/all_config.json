@@ -1,0 +1,306 @@
+{
+  "common": {
+    "vip_in": "192.168.0.10",
+    "vip_out": "192.168.0.10",
+    "ssh_user": "ctgcdt",
+    "ssh_password": "CtgcDt#1225",
+    "ssh_port": "22",
+    "enable_ha": "true",
+    "smtp_server": "smtp.126.com",
+    "smtp_port": "25",
+    "smtp_from": "baifeg@126.com",
+    "smtp_username": "baifeg",
+    "smtp_password": "126baifeg",
+    "smtp_tls": "false",
+    "network_mode": "vxlan",
+    "neutron_plugin_agent": "ovs",
+    "data_center_name": "DC1",
+    "data_center_code": "MAIN-DC",
+    "platform_route_share_teledb": "true",
+    "platform_route_mysql_ip": "",
+    "platform_route_mysql_port": "",
+    "platform_route_mysql_username": "",
+    "platform_route_mysql_password": "",
+    "use_devops":"false"
+  },
+  "init": {
+    "deploy_flag": "true",
+    "ftp_ip": "192.168.0.11"
+  },
+  "basic": {
+    "deploy_flag": "true",
+    "keepalived_ip": [
+      "192.168.0.11",
+      "192.168.0.12",
+      "192.168.0.13"
+    ],
+    "zookeeper_ip": [
+      "192.168.0.11",
+      "192.168.0.12",
+      "192.168.0.13"
+    ],
+    "nginx_ip": [
+      "192.168.0.11",
+      "192.168.0.12",
+      "192.168.0.13"
+    ],
+    "zuul_ip": [
+      "192.168.0.11",
+      "192.168.0.12",
+      "192.168.0.13"
+    ],
+    "minio_ip": [
+      "192.168.0.11",
+      "192.168.0.12",
+      "192.168.0.13"
+    ],
+    "kafka_ip": [
+      "192.168.0.11",
+      "192.168.0.12",
+      "192.168.0.13"
+    ],
+    "redis_ip": "192.168.0.11"
+  },
+  "teledb": {
+    "deploy_flag": "true",
+    "deploy_ip": [
+      "192.168.0.11",
+      "192.168.0.12",
+      "192.168.0.13"
+    ],
+    "teledbmonitor_ip":"192.168.0.11",
+    "mysql_root_password": "TianyiCDT!#",
+    "mysql_root_apollo_encrypt_password": "X0OxOsFLjVN49tEyRJ999uDRxkK0YszW（管理台apollo加密密码【姚礼华/谭丁武】，左边的是TianyiCDT!#的加密密码，如果不修改，直接删掉本注释)",
+    "mysql_root_mgr_encrypt_password": "kpTsucBRc7lLBjoYCWbII23nZa/+cAcB（管理台服务加密密码【姚礼华/谭丁武】，左边的是TianyiCDT!#的加密密码，如果不修改，直接删掉本注释)",
+    "mysql_install_buffer_size": "48G",
+    "mysql_install_thread_num": "16"
+  },
+  "front-end": {
+    "deploy_flag": "true"
+  },
+  "ceph": {
+    "deploy_flag": "true",
+    "osd_wal_size": "5",
+    "osd_db_size": "20",
+    "customize_crush_map": {},
+    "force_all_pool_size_to_1": "false",
+    "node_list": [
+      {
+        "public_addr": "10.43.128.170",
+        "cluster_addr": "10.43.140.2",
+        "is_mon": "true",
+        "wal_db_devices": ["/dev/nvme0n1p2", "/dev/nvme1n1p2"],
+        "data_devices": [
+          "/dev/sdb",
+          "/dev/sdc",
+          "/dev/sdd",
+          "/dev/sde",
+          "/dev/sdf",
+          "/dev/sdg",
+          "/dev/sdh",
+          "/dev/sdi",
+          "/dev/sdj",
+          "/dev/sdk",
+          "/dev/sdl",
+          "/dev/sdm"
+        ]
+      },
+      {
+        "public_addr": "192.168.0.15",
+        "cluster_addr": "192.168.0.15",
+        "is_mon": "true",
+        "wal_db_devices": [],
+        "data_devices": [
+          "/dev/sdb",
+          "/dev/sdc",
+          "/dev/sdd"
+        ]
+      },
+      {
+        "public_addr": "192.168.0.16",
+        "cluster_addr": "192.168.0.16",
+        "is_mon": "true",
+        "wal_db_devices": [],
+        "data_devices": [
+          "/dev/sdb",
+          "/dev/sdc",
+          "/dev/sdd"
+        ]
+      }
+    ]
+  },
+  "openstack": {
+    "deploy_flag": "true",
+    "os_password": "Openstack#2019",
+    "os_region_name": "RegionOne",
+    "first_region_os_vip": "",
+    "os_use_nginx": "false",
+    "controller_ip": [
+      "192.168.0.11",
+      "192.168.0.12",
+      "192.168.0.13"
+    ],
+    "compute_node": [
+      {
+        "host_ip": "192.168.0.14",
+        "spice_port_bind_ip": "192.168.0.14"
+      },
+      {
+        "host_ip": "192.168.0.15",
+        "spice_port_bind_ip": "192.168.0.15"
+      },
+      {
+        "host_ip": "192.168.0.16",
+        "spice_port_bind_ip": "192.168.0.16"
+      }
+    ],
+    "network_node": [
+      "192.168.0.14",
+      "192.168.0.15",
+      "192.168.0.16"
+    ]
+  },
+  "spice-server": {
+    "deploy_flag": "true"
+  },
+  "network": {
+    "deploy_flag": "true",
+    "dns_server_hosts": [
+      {
+        "ip": "192.168.0.10",
+        "domain": "deskin.bgzs.site"
+      },
+      {
+        "ip": "192.168.0.10",
+        "domain": "desktop.bgzs.site"
+      },
+      {
+        "ip": "192.168.0.10",
+        "domain": "cdweb.bgzs.site"
+      },
+      {
+        "ip": "192.168.0.10",
+        "domain": "clientconn.bgzs.site"
+      }
+    ],
+    "neutron_version": "12.0.5",
+    "network_mode_L3": "legacy",
+    "network_toolbox_ip": "192.168.0.11",
+    "network_toolbox_tenant_ip": "192.168.0.11",
+    "network_vlan_range": "1:1000",
+    "rule_inner_ip": "192.168.0.11",
+    "tenant_nic_name": "bond0",
+    "mg_nginx_ips": ["192.168.0.11", "192.168.0.12", "192.168.0.13"],
+    "mg_nginx_tenant_ips": ["192.168.0.11", "192.168.0.12", "192.168.0.13"],
+    "mg_lvs_ips": ["192.168.0.14", "192.168.0.15", "192.168.0.16"],
+    "mg_lvs_tenant_ips": ["192.168.0.14", "192.168.0.15", "192.168.0.16"],
+    "mg_lvs_vip_in": "192.168.0.9",
+    "mg_lvs_vip_out": "192.168.0.9",
+    "mg_lvs_vips_in": ["192.168.0.9"],
+    "spice_nginx_ips": ["192.168.0.11", "192.168.0.12", "192.168.0.13"],
+    "spice_nginx_tenant_ips": ["192.168.0.11", "192.168.0.12", "192.168.0.13"],
+    "spice_lvs_ips": ["192.168.0.14", "192.168.0.15", "192.168.0.16"],
+    "spice_lvs_tenant_ips": ["192.168.0.14", "192.168.0.15", "192.168.0.16"],
+    "spice_lvs_vip_in": "192.168.0.8",
+    "spice_lvs_vip_out": "192.168.0.8",
+    "spice_lvs_vips_in": ["192.168.0.8"],
+    "mysql_network_user_name": "network",
+    "mysql_network_user_password": "TianyiCTyun@!#",
+    "install_dhcp_machines_except_network_nodes": ["192.168.0.11"],
+    "br_ex_get_ip" : "true ",
+    "br_ex_binding_interface" : "true",
+    "br_ex_interface_name" : "bond0",
+    "flat_network_label_name":"provider",
+    "external_name":"br-ex",
+    "ext_network_name":"ext",
+    "ext_subnet_name":"ext-subnet",
+    "ext_network_address":"172.100.1.0/24",
+    "ext_network_mask":"255.255.255.0",
+    "ext_network_ip_address_start":"172.100.1.2",
+    "ext_network_ip_address_end":"172.100.1.254",
+    "ext_network_gateway":"172.100.1.1",
+    "ext_subnet_intenal_name":"ext-intenal",
+    "ext_network_intenal_address":"172.110.1.0/24",
+    "ext_network_intenal_mask":"255.255.255.0",
+    "ext_network_intenal_ip_address_start":"172.110.1.2",
+    "ext_network_intenal_ip_address_end":"172.110.1.254",
+    "ext_network_intenal_gateway":"172.110.1.1"
+  },
+  "logcenter": {
+    "deploy_flag": "true",
+    "logcenter_region": "produce",
+    "elasticsearch_jvm_memory": "16g",
+    "deploy_ip": [
+      "192.168.0.11",
+      "192.168.0.12",
+      "192.168.0.13"
+    ]
+  },
+  "cloud-admin": {
+    "deploy_flag": "true",
+    "deploy_ip": [
+      "192.168.0.11",
+      "192.168.0.12",
+      "192.168.0.13"
+    ],
+    "mysql_database": "cloud_desktop",
+    "mysql_sql_files": [
+      "cloud_desktop_0108_1.12.1.sql"
+    ],
+    "mysql_platform_route_sql_files": [
+      "cloud_desktop_route_inner_0810_1.8.sql"
+    ],
+    "contact_name": "电信IT研发中心",
+    "contact_phone": "020-0000000",
+    "os_cluster_name": "os-cluster1",
+    "os_cluster_code": "001",
+    "inner_external_ip_mapping": [
+      {
+        "host_ip": "192.168.0.14",
+        "port_begin": "7000",
+        "port_end": "8000",
+        "external_ip": "192.168.0.14",
+        "external_port_begin": "7000"
+      },
+      {
+        "host_ip": "192.168.0.15",
+        "port_begin": "7000",
+        "port_end": "8000",
+        "external_ip": "192.168.0.15",
+        "external_port_begin": "7000"
+      },
+      {
+        "host_ip": "192.168.0.16",
+        "port_begin": "7000",
+        "port_end": "8000",
+        "external_ip": "192.168.0.16",
+        "external_port_begin": "7000"
+      }
+    ],
+    "rabbitmq_encrypt_password":"Bdehio8m3K/xfTxvIqgoP1aWF8JFSJrv（rabbitmq加密密码【姚礼华/谭丁武】，左边的是0penStack1225的加密密码，如果不修改，直接删掉本注释）",
+    "redis_encrypt_password":"7EjVQWL5n4jj3/v8Oxu5ImssEhGMMw21（redis加密密码【姚礼华/谭丁武】，左边的是ctgCdt@2019的加密密码，如果不修改，直接删掉本注释）",
+    "ftpserver_encrypt_password":"Zp7F2pb3DEIzpdwAqgEqzuaCmbx4rsT8（ftp加密密码【姚礼华/谭丁武】，左边的是dafDkF@kn123的加密密码，如果不修改，直接删掉本注释）",
+    "platform_salt": "YYxoFjERUY[待修改，数据库没有则就一定要配置，如果数据库有就会以数据库为准]"
+  },
+  "desktop-mgr": {
+    "deploy_flag": "true",
+    "deploy_ip": [
+      "192.168.0.11",
+      "192.168.0.12",
+      "192.168.0.13"
+    ],
+    "mysql_update_mgr_sql_files": [
+    ],
+    "mysql_update_platform_route_sql_files": [
+    ],
+    "platform_name": "平台名称[待修改，数据库没有则就一定要配置，如果数据库有就会以数据库为准]",
+    "platform_salt": "YYxoFjERUY[待修改，数据库没有则就一定要配置，如果数据库有就会以数据库为准，同上platform_salt]",
+    "platform_code": "e10adc3949ba59abbe56e057f20f883e[待修改，数据库没有则就一定要配置，如果数据库有就会以数据库为准]",
+    "is_use_order_proxy_module":"1"
+  },
+  "monitor": {
+    "deploy_flag": "true",
+    "ceph_domain": "LIAN_TIAO",
+    "is_local_mgr": "true"
+  }
+}
